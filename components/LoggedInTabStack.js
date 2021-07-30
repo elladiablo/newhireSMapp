@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BlogStack from '../components/BlogStack';
 import AccountStack from '../components/AccountStack';
 import Journey from '../components/Journey';
+import Mentor from '../components/Mentor';
 import { FontAwesome } from '@expo/vector-icons'; 
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +24,10 @@ export default function LoggedInStack() {
             iconName = "globe"
           }
 
+          else if (route.name === 'Mentor') {
+            iconName = "user-plus"
+          }
+
           else if (route.name === 'Settings') {
             iconName = "cog"
           }
@@ -38,6 +43,7 @@ export default function LoggedInStack() {
         }
       }}>
         <Tab.Screen name="Journey" component={Journey} />
+        <Tab.Screen name="Mentor" component={Mentor}/>
         <Tab.Screen name="Blog" component={BlogStack} />
         <Tab.Screen name="Settings" component={AccountStack} />
       </Tab.Navigator>
