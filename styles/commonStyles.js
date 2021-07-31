@@ -18,7 +18,7 @@ export const commonStyles = {
   },
   content: {
     fontWeight: '400',
-    fontSize: 24,
+    fontSize: 25,
   },
 }
 
@@ -31,7 +31,7 @@ export const lightStyles = {
     color: "black",
   },
   header: {
-    backgroundColor: "yellow",
+    backgroundColor: "blue",
     height: 100,
     shadowColor: "black",
     shadowOpacity: 0.2,
@@ -40,7 +40,7 @@ export const lightStyles = {
   headerTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#f55"
+    color: "white"
   },
   headerTint: "#f55"
 };

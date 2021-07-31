@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image, ActivityIndicator, TouchableOpacity, Text, View, Button, Switch, Animated, TouchableWithoutFeedback } from "react-native";
+import { SafeAreaView, ScrollView,Image, ActivityIndicator, TouchableOpacity, Text, View, Button, Switch, Animated, TouchableWithoutFeedback } from "react-native";
 import { commonStyles, darkStyles, lightStyles } from "../styles/commonStyles";
 import {createStackNavigator} from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,8 +8,8 @@ const styles = lightStyles
 
 function EventsHomeScreen({navigation}) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Day One Schedule</Text>
+      <View style={{ flex: 1, justifyContent: 'top', alignItems: 'left', marginTop:20 }}>
+        <Text style={{fontSize:20}}>Day One Schedule</Text>
         <Text></Text>
         <Text>1. The Intl SOS Journey</Text>
         <Text></Text>
@@ -19,8 +19,8 @@ function EventsHomeScreen({navigation}) {
         <Text></Text>
         <Text></Text>
         <Button
-            onPress={() =>navigation.navigate ("Events Second")}
-            title ="Click to Second Day"
+            onPress={() =>navigation.navigate ("Business Fundamentals")}
+            title ="Click to Business Fundamentals"
         ></Button>
       </View>
     );
@@ -28,7 +28,7 @@ function EventsHomeScreen({navigation}) {
 
 function EventsSecondScreen({navigation}) {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <Text>Day Two Schedule</Text>
             <Text></Text>
             <Text>ABL Sales Solutions and Capabilities</Text>
@@ -38,8 +38,8 @@ function EventsSecondScreen({navigation}) {
             <Text></Text>
             <Text></Text>
             <Button
-            onPress={() =>navigation.navigate ("Events Third")}
-            title ="Click to Third Day"
+            onPress={() =>navigation.navigate ("Sales Acceleration")}
+            title ="Click to Sales Acceleration"
         ></Button>
         </View>
     );
@@ -56,7 +56,7 @@ function EventsSecondScreen({navigation}) {
             <Text></Text>
             <Button
             onPress = {() => navigation.popToTop()}
-            title = "Back to top"
+            title = "Back to Training Page Start"
             ></Button>
         </View>
     );
@@ -66,9 +66,9 @@ function EventsSecondScreen({navigation}) {
   export default function EventsStack() {
       return (
           <Stack.Navigator>
-              <Stack.Screen name="Events Home" component ={EventsHomeScreen}/>
-              <Stack.Screen name="Events Second" component ={EventsSecondScreen}/>
-              <Stack.Screen name="Events Third" component ={EventsThirdScreen}/>
+              <Stack.Screen name="Training Home Page" component ={EventsHomeScreen}/>
+              <Stack.Screen name="Business Fundamentals" component ={EventsSecondScreen}/>
+              <Stack.Screen name="Sales Acceleration" component ={EventsThirdScreen}/>
           </Stack.Navigator>
       )
   }

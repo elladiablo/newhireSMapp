@@ -4,6 +4,7 @@ import BlogStack from '../components/BlogStack';
 import AccountStack from '../components/AccountStack';
 import Journey from '../components/Journey';
 import Mentor from '../components/Mentor';
+import Training from '../components/Training';
 import { FontAwesome } from '@expo/vector-icons'; 
 
 const Tab = createBottomTabNavigator();
@@ -20,8 +21,12 @@ export default function LoggedInStack() {
             iconName = "comments"
           }
           
+else if (route.name === 'Training') {
+  iconName = "globe"
+}
+
           else if (route.name === 'Journey') {
-            iconName = "globe"
+            iconName = "home"
           }
 
           else if (route.name === 'Mentor') {
@@ -36,13 +41,14 @@ export default function LoggedInStack() {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: 'white',
+        inactiveTintColor: 'red',
         style: {
-          backgroundColor: "white",
+          backgroundColor: "blue",
         }
       }}>
         <Tab.Screen name="Journey" component={Journey} />
+        <Tab.Screen name = "Training" component={Training}/>
         <Tab.Screen name="Mentor" component={Mentor}/>
         <Tab.Screen name="Blog" component={BlogStack} />
         <Tab.Screen name="Settings" component={AccountStack} />

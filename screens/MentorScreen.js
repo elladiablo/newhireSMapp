@@ -1,74 +1,53 @@
-import React, { useState, useEffect } from "react";
-import { Image, ActivityIndicator, TouchableOpacity, Text, View, Button, Switch, Animated, TouchableWithoutFeedback } from "react-native";
+import React from 'react';
+import { View, StyleSheet, Image, Text } from 'react-native';
+import { List, Title } from 'react-native-paper'
 import { commonStyles, darkStyles, lightStyles } from "../styles/commonStyles";
-import {createStackNavigator} from "@react-navigation/stack";
-import { NavigationContainer } from '@react-navigation/native';
 
 const styles = lightStyles
+const contactsData = [
+  {
+    name: "Laurent Fourier",
+    title: "CEO",
+    company: "Assistance Business Line",
+    pic: "https://media-exp1.licdn.com/dms/image/C4D03AQEWrRc23WJMlA/profile-displayphoto-shrink_800_800/0/1549213125235?e=1622073600&v=beta&t=ZRyqrVGR-PWM8EEdh4dZpp4DRA7IiC0n6sEHTLxiIzU",
+  },
+  {
+    name: "Des Donnelly",
+    title: "Senior Vice President",
+    company: "Group Sales Distribution",
+    pic: "https://media-exp1.licdn.com/dms/image/C4E03AQEzTJ_yXUUucQ/profile-displayphoto-shrink_200_200/0/1516283950182?e=1632960000&v=beta&t=SRqUaP4Ax0RISzMAIrHAv-Tke6PpALRXHeedunkDJw0",
+  },
+  {
+    name: "Lim Hui Ject",
+    title: "Regional Group Director",
+    company: "Asia Region",
+    pic: "https://media-exp1.licdn.com/dms/image/C4D03AQFKSUHz42hJ1w/profile-displayphoto-shrink_800_800/0/1517502768817?e=1622073600&v=beta&t=1Hyq0y5SGv48JKMLCDq4gxGGzyzZwN2vqo1kb-A2kGo",
+  },
+  {
+    name: "David Ball",
+    title: "Regional Sales Director",
+    company: "South East Asia",
+    pic: "https://media-exp1.licdn.com/dms/image/C4D03AQH3rjCKqNDiFQ/profile-displayphoto-shrink_800_800/0/1516508778290?e=1622073600&v=beta&t=8s9tReMeE2TGkdX1btAQ4ey1P_gcQEl53IW4InO7cgQ",
+  },
+];
 
-function EventsHomeScreen({navigation}) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Day One Schedule</Text>
-        <Text></Text>
-        <Text>1. The Intl SOS Journey</Text>
-        <Text></Text>
-        <Text>2. Business Overview</Text>
-        <Text></Text>
-        <Text>3. First Call and our integrated approach</Text>
-        <Text></Text>
-        <Text></Text>
-        <Button
-            onPress={() =>navigation.navigate ("Events Second")}
-            title ="Click to Second Day"
-        ></Button>
+export default function ContactScreen() {
+  return(
+    <View style={styles.container}>
+      <Title style={styles.title}> Navigating the Intl SOS Maze </Title>
+      <Text></Text>
+      <Text>We are pleased to advise that you will have access to the following mentors during your first year</Text>
+      <View style={styles.list}>
+        {contactsData.map((item) => {
+          return (
+            <List.Item
+              title={item.name}
+              description={item.title + " "+ ","+" "+ item.company}
+              left={props =>
+                <Image {...props} style={styles.icon} source={{ uri: item.pic }} />}
+            />)
+        })}
       </View>
-    );
-  }
-
-function EventsSecondScreen({navigation}) {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Day Two Schedule</Text>
-            <Text></Text>
-            <Text>ABL Sales Solutions and Capabilities</Text>
-            <Text></Text>
-            <Text>Integration and Collaboration with </Text>
-            <Text>our Health and Security Partners</Text>
-            <Text></Text>
-            <Text></Text>
-            <Button
-            onPress={() =>navigation.navigate ("Events Third")}
-            title ="Click to Third Day"
-        ></Button>
-        </View>
-    );
- }
-
- function EventsThirdScreen({navigation}) {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Day Three Schedule</Text>
-            <Text></Text>
-            <Text>Let's party</Text>
-            <Text>Let's Boogie</Text>
-            <Text>Let's be silly</Text>
-            <Text></Text>
-            <Button
-            onPress = {() => navigation.popToTop()}
-            title = "Back to top"
-            ></Button>
-        </View>
-    );
- }
-  const Stack = createStackNavigator ();
-
-  export default function EventsStack() {
-      return (
-          <Stack.Navigator>
-              <Stack.Screen name="Events Home" component ={EventsHomeScreen}/>
-              <Stack.Screen name="Events Second" component ={EventsSecondScreen}/>
-              <Stack.Screen name="Events Third" component ={EventsThirdScreen}/>
-          </Stack.Navigator>
-      )
-  }
+    </View>
+  );
+}

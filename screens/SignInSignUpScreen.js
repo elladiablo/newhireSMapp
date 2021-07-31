@@ -80,6 +80,8 @@ export default function SignInSignUpScreen({ navigation }) {
   }
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>INTL. SOS</Text>
+      <Text style={styles.title}>SALES MAZE CONQUERER</Text>
       <Text style={styles.title}>
         {isLogIn ? "Log In" : "Sign Up"}
       </Text>
