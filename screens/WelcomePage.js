@@ -18,9 +18,15 @@ function EventsHomeScreen({navigation}) {
           </Card.Content>
           <Card.Cover style={{marginTop: 5, height: 200
           }} source={{ uri: "https://mms.businesswire.com/media/20161128005875/en/557130/5/2738807_International_SOS_RGB_hr.jpg?download=1"}}/>
-           <Title style={{fontSize:30}}>Hi New Hire</Title>
-          <Paragraph style ={{fontSize:20}}>Welcome to the International SOS Sales & Marketing Team. </Paragraph>
-          <Paragraph>We look forward to hosting you on your learning journing over the next 365 days.</Paragraph>
+           {/* <Title style={{fontSize:30}}>Hi New Hire</Title> */}
+           <Title></Title>
+          <Paragraph style ={{fontSize:20}}>Welcome to the International SOS Sales & Marketing Team in Asia Pacific. </Paragraph>
+          <Paragraph></Paragraph>
+          <Paragraph style ={{fontSize:15}}>We look forward to accompany you on your learning journey over the next 365 days.</Paragraph>
+          <Paragraph></Paragraph>
+          <Paragraph>You will go through training on our Solutions from our Assistance Business Line as well as Medical Services Business Line.</Paragraph>
+          <Paragraph></Paragraph>
+          <Paragraph>I am sure you have questions so please check out some of the answers we have prepared for you by clicking on the FAQ button below</Paragraph>
           </Card>
 
       </ScrollView>
@@ -37,14 +43,14 @@ function EventsHomeScreen({navigation}) {
 function EventsSecondScreen({navigation}) {
     return (
 <> 
-        <View style={{ flex: 0, maxWidth:300, justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+        <View style={{ flex: 0, maxWidth:500, justifyContent: 'center', alignItems: 'left', overflow: 'hidden' }}>
             {/* <SafeAreaView> */}
-            <Text>Day Two Schedule</Text>
+            <Text>These are the questions that we have prepared for you to review</Text>
             <Text></Text>
             <Text>ABL Sales Solutions and Capabilities</Text>
             <Text></Text>
             <Text>Integration and Collaboration with </Text>
-            <Text>our Health and Security Partners XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</Text>
+            <Text>our Health and Security Partners </Text>
             <Text style={{maxWidth:100, overflow:'hidden'}}>our Health and Security Partners YyyyyyyyyyyyyyyyyyyyybybbybybybbybybybybybybybybybybybybybyXOUCH</Text>
             <Text></Text>
             <Text></Text>
@@ -71,7 +77,7 @@ function EventsSecondScreen({navigation}) {
         </List.Section>
         <Button
             onPress={() =>navigation.navigate ("What You Do")}
-            title ="Click to Third Day"
+            title ="Click to What You Should Do"
         ></Button>
         </ScrollView>
         
